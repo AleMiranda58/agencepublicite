@@ -11,5 +11,4 @@ $(document).ready(function () {
   alturaBanner();
 
   $(window).resize(alturaBanner);
-
 });

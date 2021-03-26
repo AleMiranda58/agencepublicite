@@ -2,36 +2,36 @@
 
 $(document).ready(function () {
 
-  var btnVolverArriba = $('#btnVolverArriba');
+  var btnUp = $('#btnUp');
 
   $(window).on('scroll', function () {
-    var proyectosOffsetTop = $('#proyectos').offset().top;
+    var projetsOffsetTop = $('#projets').offset().top;
 
     //Affiche / cache le button "d'aller vers le haut" de la page web
-    if ($(window).scrollTop() >= proyectosOffsetTop) {
-      btnVolverArriba.css('margin-right', 0);
+    if ($(window).scrollTop() >= projetsOffsetTop) {
+      btnUp.css('margin-right', 0);
 
-    }else if ($(window).scrollTop() <= proyectosOffsetTop/2) {
-      btnVolverArriba.css('margin-right', '-60px');
+    }else if ($(window).scrollTop() <= projetsOffsetTop/2) {
+      btnUp.css('margin-right', '-60px');
     }
   })
 
 /************************************************************************************************ */
-  $('a.volver-arriba').on('click', function (e) {
+  $('a.fleche-up').on('click', function (e) {
     e.preventDefault();
     if ($(window).scrollTop() != 0) {
       $('html, body').stop().animate({scrollTop: 0}, 1000);
     }
   })
 
-  $('a.scroll-suave').on('click', function (e) {
+  $('a.soft-scroll').on('click', function (e) {
     e.preventDefault();
     var seccionOffsetTop = $($(this).attr('href')).offset().top
     $('html, body').stop().animate({scrollTop: seccionOffsetTop}, 1000);
   });
 
 /************************************************************************************************ */
-  $('a.scroll-acercaDe').on('click', function (e) {
+  $('a.apropos-scroll').on('click', function (e) {
     e.preventDefault();
     var seccionOffsetTop = $($(this).attr('href')).offset().top - 122
     $('html, body').stop().animate({scrollTop: seccionOffsetTop}, 1000);
